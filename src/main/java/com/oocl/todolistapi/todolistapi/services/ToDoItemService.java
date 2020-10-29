@@ -17,4 +17,14 @@ public class ToDoItemService {
     public List<ToDoItem> getAllToDoItems() {
         return toDoItemRepository.findAll();
     }
+
+    public ToDoItem getToDoItemById(int taskId) {
+        return toDoItemRepository.findById(taskId).orElse(null);
+    }
+
+    public ToDoItem updateToDoItem(int taskId) {
+        ToDoItem toDoItem = toDoItemRepository.findById(taskId).orElse(null);
+        toDoItem.setDone(!toDoItem.isDone());
+        return toDoItemRepository.save(toDoItem);
+    }
 }

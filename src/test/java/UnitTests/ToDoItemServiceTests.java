@@ -28,4 +28,37 @@ public class ToDoItemServiceTests {
         //then
         assertEquals(expectedToDoList.size(), actualToDoItemList.size());
     }
+
+    @Test
+    void should_return_updated_toDo_Item_when_update_toDoItem_given_toDo_item_id() {
+        //given
+        ToDoItemRepository toDoItemRepository = Mockito.mock(ToDoItemRepository.class);
+        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise", false);
+        ToDoItem updatedToDoItem = new ToDoItem(1,"Finish Exercise", true);
+        ToDoItemService toDoItemService = new ToDoItemService(toDoItemRepository);
+
+        //when
+        when(toDoItemRepository.findById(expectedToDoItem.getToDoId())).thenReturn(java.util.Optional.of(expectedToDoItem));
+        when(toDoItemRepository.save(expectedToDoItem)).thenReturn(updatedToDoItem);
+        ToDoItem actualToDoItem = toDoItemService.updateToDoItem(expectedToDoItem.getToDoId());
+
+        //then
+        assertEquals(true, actualToDoItem.isDone());
+    }
+
+    @Test
+    void should_return_toDo_Items_when_get_toDoItem_given_toDo_item_id() {
+        //given
+        ToDoItemRepository toDoItemRepository = Mockito.mock(ToDoItemRepository.class);
+        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise", false);
+        ToDoItemService toDoItemService = new ToDoItemService(toDoItemRepository);
+
+        //when
+        when(toDoItemRepository.findById(expectedToDoItem.getToDoId())).thenReturn(java.util.Optional.of(expectedToDoItem));
+        ToDoItem actualToDoItem = toDoItemService.getToDoItemById(expectedToDoItem.getToDoId());
+
+        //then
+        assertEquals(expectedToDoItem.getText(), actualToDoItem.getText());
+        assertEquals(expectedToDoItem.isDone(), actualToDoItem.isDone());
+    }
 }
