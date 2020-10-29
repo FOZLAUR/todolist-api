@@ -15,10 +15,10 @@ public class ToDoItem {
 
     public ToDoItem() {}
 
-    public ToDoItem(int toDoId, String text, boolean isDone) {
+    public ToDoItem(int toDoId, String text) {
         this.toDoId = toDoId;
         this.text = text;
-        this.isDone = isDone;
+        this.isDone = false;
     }
 
     public int getToDoId() {
