@@ -33,7 +33,7 @@ public class ToDoItemServiceTests {
     void should_return_created_toDo_Item_when_create_toDoItem_given_toDo_item_id() {
         //given
         ToDoItemRepository toDoItemRepository = Mockito.mock(ToDoItemRepository.class);
-        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise", false);
+        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise");
         ToDoItemService toDoItemService = new ToDoItemService(toDoItemRepository);
 
         //when
@@ -48,8 +48,9 @@ public class ToDoItemServiceTests {
     void should_return_updated_toDo_Item_when_update_toDoItem_given_toDo_item_id() {
         //given
         ToDoItemRepository toDoItemRepository = Mockito.mock(ToDoItemRepository.class);
-        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise", false);
-        ToDoItem updatedToDoItem = new ToDoItem(1,"Finish Exercise", true);
+        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise");
+        ToDoItem updatedToDoItem = new ToDoItem(1,"Finish Exercise");
+        updatedToDoItem.setDone(!updatedToDoItem.isDone());
         ToDoItemService toDoItemService = new ToDoItemService(toDoItemRepository);
 
         //when
@@ -65,7 +66,7 @@ public class ToDoItemServiceTests {
     void should_return_when_delete_toDoItem_given_toDo_item_id() {
         //given
         ToDoItemRepository toDoItemRepository = Mockito.mock(ToDoItemRepository.class);
-        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise", false);
+        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise");
         ToDoItemService toDoItemService = new ToDoItemService(toDoItemRepository);
 
         //when
@@ -79,7 +80,7 @@ public class ToDoItemServiceTests {
     void should_return_toDo_Items_when_get_toDoItem_given_toDo_item_id() {
         //given
         ToDoItemRepository toDoItemRepository = Mockito.mock(ToDoItemRepository.class);
-        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise", false);
+        ToDoItem expectedToDoItem = new ToDoItem(1,"Finish Exercise");
         ToDoItemService toDoItemService = new ToDoItemService(toDoItemRepository);
 
         //when
