@@ -1,1 +1,0 @@
-create table to_do_item (to_do_id integer, is_done boolean not null, text varchar(255), primary key (to_do_id))
