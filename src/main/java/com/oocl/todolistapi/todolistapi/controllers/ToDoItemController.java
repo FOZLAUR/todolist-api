@@ -30,10 +30,13 @@ public class ToDoItemController {
 
     // UPDATE
     @PutMapping("{taskId}")
-    public ToDoItem updateToDoItem(int taskId){
+    public ToDoItem updateToDoItem(@PathVariable int taskId){
         return toDoItemService.updateToDoItem(taskId);
     }
-    
-    // D
 
+    // DELETE
+    @DeleteMapping("{taskId}")
+    public void deleteToDoItem(@PathVariable int taskId){
+        toDoItemService.deleteToDoItem(taskId);
+    }
 }
