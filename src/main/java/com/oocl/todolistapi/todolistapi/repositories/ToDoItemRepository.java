@@ -1,6 +1,6 @@
 package com.oocl.todolistapi.todolistapi.repositories;
 
-import com.oocl.todolistapi.todolistapi.models.ToDoItem;
+import com.oocl.todolistapi.todolistapi.entity.ToDoItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

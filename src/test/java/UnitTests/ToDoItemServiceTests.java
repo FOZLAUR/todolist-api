@@ -1,6 +1,6 @@
 package UnitTests;
 
-import com.oocl.todolistapi.todolistapi.models.ToDoItem;
+import com.oocl.todolistapi.todolistapi.entity.ToDoItem;
 import com.oocl.todolistapi.todolistapi.repositories.ToDoItemRepository;
 import com.oocl.todolistapi.todolistapi.services.ToDoItemService;
 import org.junit.jupiter.api.Test;

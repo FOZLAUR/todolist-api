@@ -1,6 +1,6 @@
 package com.oocl.todolistapi.todolistapi.services;
 
-import com.oocl.todolistapi.todolistapi.models.ToDoItem;
+import com.oocl.todolistapi.todolistapi.entity.ToDoItem;
 import com.oocl.todolistapi.todolistapi.repositories.ToDoItemRepository;
 import org.springframework.stereotype.Service;
 
