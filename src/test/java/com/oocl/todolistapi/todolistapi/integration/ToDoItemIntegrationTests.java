@@ -30,6 +30,7 @@ public class ToDoItemIntegrationTests {
     @Test
     void should_get_all_todos_when_get_all() throws Exception{
         ToDoItem toDoItem = new ToDoItem(1,"aaaaaa");
+        toDoItemRepository.deleteAll();
         toDoItemRepository.save(toDoItem);
 
         mockMvc.perform(get(TODOS_URI))
