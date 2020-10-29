@@ -1,24 +1,24 @@
 package com.oocl.todolistapi.todolistapi.dto;
 
 public class ToDoItemResponse {
-    private int toDoId;
+    private int id;
     private String text;
-    private boolean isDone;
+    private boolean done;
 
     public ToDoItemResponse() { }
 
-    public ToDoItemResponse(int toDoId, String text, boolean isDone) {
-        this.toDoId = toDoId;
+    public ToDoItemResponse(int id, String text, boolean done) {
+        this.id = id;
         this.text = text;
-        this.isDone = isDone;
+        this.done = done;
     }
 
-    public int getToDoId() {
-        return toDoId;
+    public int getId() {
+        return id;
     }
 
-    public void setToDoId(int toDoId) {
-        this.toDoId = toDoId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getText() {
@@ -30,10 +30,10 @@ public class ToDoItemResponse {
     }
 
     public boolean isDone() {
-        return isDone;
+        return done;
     }
 
     public void setDone(boolean done) {
-        isDone = done;
+        this.done = done;
     }
 }
