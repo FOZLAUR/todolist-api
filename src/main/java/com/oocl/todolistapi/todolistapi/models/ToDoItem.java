@@ -13,6 +13,8 @@ public class ToDoItem {
     private String text;
     private boolean isDone;
 
+    public ToDoItem() {}
+
     public ToDoItem(int toDoId, String text, boolean isDone) {
         this.toDoId = toDoId;
         this.text = text;
