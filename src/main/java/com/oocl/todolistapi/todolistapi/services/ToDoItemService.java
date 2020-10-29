@@ -14,17 +14,25 @@ public class ToDoItemService {
         this.toDoItemRepository = toDoItemRepository;
     }
 
-    public List<ToDoItem> getAllToDoItems() {
-        return toDoItemRepository.findAll();
+    public ToDoItem createToDoItem(ToDoItem newToDoItem){
+        return toDoItemRepository.save(newToDoItem);
     }
 
-    public ToDoItem getToDoItemById(int taskId) {
-        return toDoItemRepository.findById(taskId).orElse(null);
+    public List<ToDoItem> getAllToDoItems() {
+        return toDoItemRepository.findAll();
     }
 
     public ToDoItem updateToDoItem(int taskId) {
         ToDoItem toDoItem = toDoItemRepository.findById(taskId).orElse(null);
         toDoItem.setDone(!toDoItem.isDone());
         return toDoItemRepository.save(toDoItem);
+    }
+
+    public void deleteToDoItem(int taskId) {
+        toDoItemRepository.deleteById(taskId);
+    }
+
+    public ToDoItem getToDoItemById(int taskId) {
+        return toDoItemRepository.findById(taskId).orElse(null);
     }
 }
